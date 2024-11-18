@@ -115,13 +115,33 @@ If you are using Window system instead of Linux then you can Follow these instru
    ```
     - Open the Docker Desktop and Navigate to csvserver container<File<csvserver<inputdata
     - If it is modified then
-      
-4. **Use this command to check if the container is running**:
+
+4. **Error you might get**:
+    - If you get any error like the container is already exist or used then
+    - Stop that Container and delete it
+   ```bash
+   docker stop container name
+   docker rm <containerid>/<containername>
+   ```
+    - Now, Again use this command
+    ```bash
+   docker run -d --name csvserver -v "$(pwd)/inputFile:/csvserver/inputdata" -p 9393:9300 -e CSVSERVER_BORDER=Orange infracloudio/csvserver:latest
+   ```
+    - Start the container
+   ```bash
+   docker start container name
+   ```
+    - Again, use the copy command
+   ```bash
+   docker cp inputFile csvserver:/csvserver/inputdata
+   ```
+   
+5. **Use this command to check if the container is running**:
    ```bash
    docker ps
    ```
 
-5. **Access the application**:
+6. **Access the application**:
    - Navigate to [http://localhost:9393](http://localhost:9393).
 
 ### Step 4: Logs and Outputs
