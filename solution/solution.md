@@ -59,7 +59,7 @@ If you are using Window system instead of Linux then you can Follow these instru
    ```bash
    docker logs csvserver
    ```
-5.  
+  
 
 ### Step 2: Creating `inputFile`
 1. **Create `gencsv.sh` script**:
